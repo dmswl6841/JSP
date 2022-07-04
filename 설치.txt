@@ -1,0 +1,46 @@
+이클립스 다운
+패키지
+
+(현재 사용중인 버전은 2022-03버전)
+(짝수버전은 안정적, 홀수 버전은 신기능추가)
+
+현재 우리는 웹개발이기 떄문에
+Eclipse IDE for Enterprise Java and Web Developers을 클릭
+
+>> Select Another Mirror
+Korea, Republic Of - Kakao Corp. 다운로드.
+
+
+프로젝트의 자바 버전 변경
+프로젝트 우클릭
+properties -> project Facets ->java옆의 1.7을 11으로 변경
+저장
+
+
+https://apache.org/
+맨밑의 tomcat
+
+Download
+
+installer X
+zip.file
+64-bit window.zip download
+
+사용할 폴더에 옮김
+
+ex. C:\DEV
+
+이클립스
+
+콘솔옆에 서버
+새로 서버 만들기
+아파치-톰캣9-생성..?
+
+생성후 더블클릭
+오른쪽의 port
+톰캣 port를 80으로 바꿈 (80은 wed default port)
+
+메이븐 생성
+apache.maven
+
+개발할때는 webapp이 root
