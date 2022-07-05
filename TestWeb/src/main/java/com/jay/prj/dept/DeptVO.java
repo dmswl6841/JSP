@@ -8,7 +8,7 @@ public class DeptVO {
 	public String getDepartmentId() {
 		return departmentId;
 	}
-	public void setDepartmentId(String departmentId) {
+	public void setDepartmentId(String departmentId) { 
 		this.departmentId = departmentId;
 	}
 	public String getDepartmentName() {

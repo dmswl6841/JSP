@@ -10,7 +10,7 @@ public class EmpVO {
 	private String departmentId;
 	
 	
-	public String getDepartmentId() {
+	public String getDepartmentId() { 
 		return departmentId;
 	}
 	public void setDepartmentId(String departmentId) {

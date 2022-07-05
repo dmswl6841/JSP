@@ -12,7 +12,7 @@ import com.jay.prj.dept.DeptDAO;
 
 
 @WebServlet("/EmpInsert")
-public class EmpInsertServ extends HttpServlet{
+public class EmpInsertServ extends HttpServlet{  
 
 	//등록페이지로 이동
 	@Override

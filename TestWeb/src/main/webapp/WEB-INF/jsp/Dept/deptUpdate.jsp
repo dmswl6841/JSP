@@ -12,7 +12,7 @@
 	 if(frm.departmentId.value==""){
 		 alert("부서번호를 입력하여주십시오")
 		 return ;
-	 }
+	 } 
 	 frm.submit;	//=form 전송 일반 submit 버튼 눌렀을때와 같음.
  }
 </script>

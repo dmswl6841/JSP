@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class EmpServlet
- */
+ */ 
 @WebServlet(urlPatterns = {"/EmpServlet","/EmpSV"})
-public class EmpListServlet extends HttpServlet {
+public class EmpListServlet extends HttpServlet { 
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

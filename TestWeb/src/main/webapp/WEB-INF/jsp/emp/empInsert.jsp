@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>사원등록</title>
 <script>
-	function validateForm() {
+	function validateForm() { 
 		if (window.document.frm.employeeId.value == "") {
 			alert("사원번호를 입력하여 주십시오")
 			frm.employeeId.focus();

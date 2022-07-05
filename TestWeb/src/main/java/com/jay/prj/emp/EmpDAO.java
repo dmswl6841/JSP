@@ -9,7 +9,7 @@ import com.jay.prj.common.DAO;
 public class EmpDAO extends DAO {
 	//job 전체조회
 	public ArrayList<JobsVO> selectJobs(){
-		ArrayList<JobsVO> list = new ArrayList<JobsVO>();
+		ArrayList<JobsVO> list = new ArrayList<JobsVO>(); 
 		
 		try {
 			getConnect();

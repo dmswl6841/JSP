@@ -8,7 +8,7 @@ public class DeptDAO extends DAO{
 
 	//조회
 	public ArrayList<DeptVO> selectDept(){
-		ArrayList<DeptVO> list = new ArrayList<DeptVO>();
+		ArrayList<DeptVO> list = new ArrayList<DeptVO>(); 
 		
 		try {
 			getConnect();

@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <title>사원 목록</title>
 </head>
-<body>
+<body> 
 	<h3>사원목록</h3>
 	<a href="/TestWeb/EmpInsert">사원등록</a><br>
 	<form>

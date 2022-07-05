@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class DeptInsertServ
  */
 @WebServlet("/DeptInsert")
-public class DeptInsertServ extends HttpServlet {
+public class DeptInsertServ extends HttpServlet { 
 	private static final long serialVersionUID = 1L;
 	//등록 페이지 (이동)요청
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
