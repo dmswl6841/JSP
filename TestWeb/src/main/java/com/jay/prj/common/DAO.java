@@ -1,4 +1,4 @@
-package com.jay.prj;
+package com.jay.prj.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

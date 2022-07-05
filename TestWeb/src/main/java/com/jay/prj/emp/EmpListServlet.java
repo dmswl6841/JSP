@@ -1,4 +1,4 @@
-package com.jay.prj;
+package com.jay.prj.emp;
 
 import java.io.IOException;
 
@@ -15,21 +15,9 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class EmpServlet
  */
 @WebServlet(urlPatterns = {"/EmpServlet","/EmpSV"})
-public class EmpServlet extends HttpServlet {
+public class EmpListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public EmpServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -45,9 +33,9 @@ public class EmpServlet extends HttpServlet {
 		
 		EmpDAO dao = new EmpDAO();
 		
-		
-		request.setAttribute("list", dao.selectAll());
-		request.getRequestDispatcher("/WEB-INF/jsp/empList.jsp").forward(request, response);
+		String id = request.getParameter("departmentId");
+		request.setAttribute("list", dao.selectAll(id));
+		request.getRequestDispatcher("/WEB-INF/jsp/emp/empList.jsp").forward(request, response);
 		
 //		for (EmpVO vo : list) {
 //			out.print("<tr>");
@@ -59,13 +47,9 @@ public class EmpServlet extends HttpServlet {
 //		out.print("</tbody></table></body></html>");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
