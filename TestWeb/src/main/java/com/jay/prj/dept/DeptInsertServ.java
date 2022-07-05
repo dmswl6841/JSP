@@ -32,7 +32,7 @@ public class DeptInsertServ extends HttpServlet {
 		
 		DeptVO vo = new DeptVO();
 		vo.setDepartmentId(id);
-		vo.setDepartmentName(name);
+		vo.setDepartmentName(name); 
 		//DB처리
 		DeptDAO dao = new DeptDAO();
 		int cnt = dao.deptInsert(vo);
