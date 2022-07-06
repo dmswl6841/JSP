@@ -16,7 +16,7 @@ public class BoardDAO extends DAO{
 			psmt=conn.prepareStatement(sql);
 			rs=psmt.executeQuery();
 			
-			while(rs.next()) {
+			while(rs.next()) { 
 				BoardVO vo = new BoardVO();
 				vo.setId(rs.getString("id"));
 				vo.setTitle(rs.getString("title"));

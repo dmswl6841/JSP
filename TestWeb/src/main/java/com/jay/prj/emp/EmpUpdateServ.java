@@ -11,21 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 import com.jay.prj.dept.DeptDAO;
 
 
-@WebServlet("/EmpInsert")
-public class EmpInsertServ extends HttpServlet{  
+@WebServlet("/EmpUpdate")
+public class EmpUpdateServ extends HttpServlet{  
 
 	//등록페이지로 이동
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//DB조회
 		//jobs,부서, 사원
-		request.setAttribute("jobs", new EmpDAO().selectJobs());
+		EmpDAO dao = new EmpDAO();
+		request.setAttribute("jobs", dao.selectJobs());
 		request.setAttribute("dept", new DeptDAO().selectDept());
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/emp/empInsert.jsp").forward(request, response);
+		//수정할 사번을 가지고 단건 조회
+		String employeeId = request.getParameter("employeeId");
+		request.setAttribute("emp", dao.selectOne(employeeId));
+		request.getRequestDispatcher("/WEB-INF/jsp/emp/empUpdate.jsp").forward(request, response);
 	}	
 	
-	//등록처리
+	//수정처리
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -49,12 +53,8 @@ public class EmpInsertServ extends HttpServlet{
 		
 		//DB처리
 		EmpDAO dao = new EmpDAO();
-		int cnt = dao.empInsert(vo);
+		int cnt = dao.empUpdate(vo);
 		//결과 출력
-		//response.getWriter().append(cnt+"건이 등록됨");
-		//입력 완료 시 리스트로 이동
-		//request.getRequestDispatcher("EmpServlet").forward(request, response);
-		response.sendRedirect("EmpServlet");
-		
+		response.getWriter().append(cnt+"건이 등록됨");
 	}
 }

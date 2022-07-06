@@ -76,7 +76,7 @@ public class DeptDAO extends DAO{
 	}
 	
 	//수정
-	public int update(DeptVO vo) {
+	public int deptUpdate(DeptVO vo) {
 		int r= 0;
 		try {
 			getConnect();

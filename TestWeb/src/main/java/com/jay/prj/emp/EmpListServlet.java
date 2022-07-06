@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class EmpServlet
  */ 
+
+//http://localhost/컨텍스트패스/	-> /는 다음에 나옴	(http://localhost/컨텍스트패스/EmpServlet
 @WebServlet(urlPatterns = {"/EmpServlet","/EmpSV"})
 public class EmpListServlet extends HttpServlet { 
 	private static final long serialVersionUID = 1L;

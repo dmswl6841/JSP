@@ -26,6 +26,7 @@ public class DeptUpdateServ extends HttpServlet {
 		
 	}
 	
+	
 	//DB 수정 처리
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8"); 	//jps 맨 위의 ContextType 복붙
@@ -39,10 +40,10 @@ public class DeptUpdateServ extends HttpServlet {
 		vo.setDepartmentName(name);
 		//DB처리
 		DeptDAO dao = new DeptDAO();
-		int cnt = dao.update(vo);
+		int cnt = dao.deptUpdate(vo);
 		//결과 출력
 		response.getWriter()
-		.append(cnt+"건이 등록됨");
+		.append(cnt+"건이 등록되었습니다.");
 	}
 
 }

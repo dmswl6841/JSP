@@ -12,6 +12,8 @@
 <title>사원 목록</title>
 </head>
 <body> 
+<%-- <%@ include file="/WEB-INF/jsp/header.jsp" %> --%>
+<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 	<h3>사원목록</h3>
 	<a href="/TestWeb/EmpInsert">사원등록</a><br>
 	<form>
@@ -33,7 +35,7 @@
 			<% ArrayList<EmpVO> list = (ArrayList<EmpVO>)request.getAttribute("list");
 			for(EmpVO emp : list) {	%>
 			<tr><td><%=emp.getEmployeeId() %></td>
-			<td><%=emp.getLastName() %></td>
+			<td><a href="EmpUpdate?employeeId=<%=emp.getEmployeeId() %>"><%=emp.getLastName() %></a></td>
 			<td><%=emp.getEmail() %></td>
 			<td><%=emp.getHireDate() %></td>
 			<td><%=emp.getJobId() %></td>

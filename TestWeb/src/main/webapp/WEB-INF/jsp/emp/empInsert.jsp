@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -45,18 +46,24 @@
 </script>
 <form name="frm" action="EmpInsert" method="post" onsubmit="return validateForm()">
 	<body>
+	<%-- <%@ include file="/WEB-INF/jsp/header.jsp" %> --%>
+	<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 		<h3>사원등록</h3>
 		사원번호
 		<input name="employeeId"><br>
 		이름<input name="lastName"><br>
 		E-mail<input name="email"><br>
 		입사일<input type="date" name="hireDate"><br>
-		jobId<select name="jobId">
-				<% ArrayList<JobsVO> list = (ArrayList<JobsVO>)request.getAttribute("jobs");
+		jobId<select name="jobId"><br>
+				<c:foreach item="vo" var="job">
+			<option value="${vo.getJobId()}">${vo.getJobTitle()}
+			
+			</option></c:foreach>
+			<%-- <% ArrayList<JobsVO> list = (ArrayList<JobsVO>)request.getAttribute("jobs");
 				for(JobsVO vo: list ){%>
 			<option value="<%=vo.getJobId()%>"><%=vo.getJobTitle() %>
-			<% } %>
-		부서등록
+			<% } %> --%>
+		부서
 			<% ArrayList<DeptVO> list1 = (ArrayList<DeptVO>)request.getAttribute("dept");
 			for(DeptVO vo : list1) {%>
 			<input type="radio" name="departmentId" value="<%=vo.getDepartmentId()%>"><%=vo.getDepartmentName() %>
