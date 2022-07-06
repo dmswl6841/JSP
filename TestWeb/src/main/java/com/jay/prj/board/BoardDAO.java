@@ -82,7 +82,7 @@ public class BoardDAO extends DAO{
 		}finally {
 			disConnect();
 		}
-		return cnt;
+		return cnt; 
 	}
 	
 	//삭제
