@@ -27,6 +27,25 @@
 		}
 		frm.submit();
 	}
+	function edit(){
+		if(frm.title.value==""){
+			alert("제목을 입력하여주십시오")
+			return;
+		}
+		if(frm.content.value==""){
+			alert("내용을 입력하여주십시오")
+			return;
+		}
+		if(frm.writer.value==""){
+			alert("글쓴이를 입력하여주십시오")
+			return;
+		}
+		if(frm.rdt.value==""){
+			alert("작성일을 입력하여주십시오")
+			return;
+		}
+		frm.submit();
+	}
 </script>
 </head>
 <body>
@@ -37,6 +56,7 @@
 	<label>작성일</label><input type="date" name="rdt"><br>
 	<label>조회수</label><input type="text" name="hit"><br>
 	<button type="button" onclick="save()">저장</button>
+	<button type="button" onclick="edit()">수정</button>
 	</form>
 </body>
 </html>

@@ -33,6 +33,33 @@ public class BoardDAO extends DAO{
 		}
 		return list;
 	}
+	//단건 조회
+	public BoardVO selectOne(String id) {
+		BoardVO vo = new BoardVO();
+		
+		try {
+			getConnect();
+			
+			String sql = "select * from board where id=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getId());
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				vo.setId(rs.getString("id"));
+				vo.setTitle(rs.getString("title"));
+				vo.setContent(rs.getString("content"));
+				vo.setWriter(rs.getString("writer"));
+				vo.setrDate(rs.getString("rdt"));
+				vo.setHit(rs.getString("hit"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			disConnect();
+		}
+		return vo;
+	}
 	
 	//등록
 	public int boardInsert(BoardVO vo) {
