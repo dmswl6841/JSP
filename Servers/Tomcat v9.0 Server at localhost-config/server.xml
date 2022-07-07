@@ -107,7 +107,7 @@
 
 				<!-- <Context docBase="d:/test" path="/web"/>
 				<Context docBase="d:/Web/images" path="/images"/> -->
-			<Context docBase="TestWeb" path="/TestWeb" reloadable="true" source="org.eclipse.jst.jee.server:TestWeb"/><Context docBase="jsp" path="/jsp" reloadable="true" source="org.eclipse.jst.jee.server:jsp"/></Host>
+			<Context docBase="TestWeb" path="/TestWeb" reloadable="true" source="org.eclipse.jst.jee.server:TestWeb"/><Context docBase="20220707" path="/20220707" reloadable="true" source="org.eclipse.jst.jee.server:20220707"/></Host>
 		</Engine>
 	</Service>
 </Server>

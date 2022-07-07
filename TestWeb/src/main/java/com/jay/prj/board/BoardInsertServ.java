@@ -47,11 +47,11 @@ public class BoardInsertServ extends HttpServlet {
 		BoardDAO dao = new BoardDAO();
 		int cnt = dao.boardInsert(vo);
 		
-		response.getWriter()
+//		response.getWriter()
 //		.append("<script>")
 //		.append("alert(")
-		.append(cnt+"건이 등록됨");
+//		.append(cnt+"건이 등록됨");
 //		.append("</script>");
-		//response.sendRedirect("BoardList");
+		response.sendRedirect("BoardList");
 	}
 }

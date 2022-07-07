@@ -61,7 +61,6 @@
 		<c:foreach items="list1" var="dept">
 			<input type="radio" name="departmentId"value="${dept.getDepartmentId()}"
 			<c:if test="dept.getDepartmentId()==vo.getDepartmentId()"> checked="checked" </c:if>>
-					
 				${dept.getDepartmentName()}
 		</c:foreach>
 				

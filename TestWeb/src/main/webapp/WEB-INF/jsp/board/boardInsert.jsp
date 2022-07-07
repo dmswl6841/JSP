@@ -56,7 +56,6 @@
 	<label>작성일</label><input type="date" name="rdt"><br>
 	<label>조회수</label><input type="text" name="hit"><br>
 	<button type="button" onclick="save()">저장</button>
-	<button type="button" onclick="edit()">수정</button>
 	</form>
 </body>
 </html>

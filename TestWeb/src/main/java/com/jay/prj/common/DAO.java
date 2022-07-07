@@ -22,9 +22,9 @@ public class DAO {
 	}
 
 	public void disConnect() {
-		if (conn != null) {
+		if (rs != null) {
 			try {
-				conn.close();
+				rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -36,12 +36,14 @@ public class DAO {
 				e.printStackTrace();
 			}
 		}
-		if (rs != null) {
+		if (conn != null) {
 			try {
-				rs.close();
+				conn.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
+		
+		
 	}
 }
