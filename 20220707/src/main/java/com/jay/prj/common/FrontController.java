@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jay.prj.MainCommand;
+import com.jay.prj.member.command.AjaxMemberIdCheck;
+import com.jay.prj.member.command.MemberJoin;
+import com.jay.prj.member.command.MemberJoinForm;
+import com.jay.prj.member.command.MemberList;
+import com.jay.prj.member.command.MemberLogin;
+import com.jay.prj.member.command.MemberLogout;
+import com.jay.prj.member.command.MemberLoginForm;
 
 @WebServlet("*.do")	//~.do로 요청이 들어오면 무조건 여기서 실행
 public class FrontController extends HttpServlet {
@@ -26,8 +33,13 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		//초기화 하는 메소드(Mapping하는 부분을 작성)
 		map.put("/main.do", new MainCommand());	//처음접속하는 페이지
-		
-		
+		map.put("/memberLoginForm.do", new MemberLoginForm());	//로그인 폼 호출
+		map.put("/memberLogin.do", new MemberLogin()); //로그인
+		map.put("/memberLogoutForm.do", new MemberLogout()); //로그아웃
+		map.put("/memberList.do", new MemberList());
+		map.put("/memberJoinForm.do", new MemberJoinForm()); //회원가입
+		map.put("/ajaxMemberIdCheck.do", new AjaxMemberIdCheck()); //ajax를 이용한
+		map.put("/memberJoin", new MemberJoin());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,8 +52,13 @@ public class FrontController extends HttpServlet {
 		Command command = map.get(page);	//실제 수행할 Command를 찾음  = new MainCommand();
 		String viewPage = command.exec(request, response);	//요청 Command를 수행하고 결과를 받음
 		
-		//viewResolve
+		//viewResolve 보여줄 페이지 선택
 		if(!viewPage.endsWith(".do") && !viewPage.equals(null)) {
+			if(viewPage.startsWith("ajax:")) {
+				response.setContentType("text/html; charset=UTF-8");
+				response.getWriter().append(viewPage.substring(5));
+				return;
+			}
 			viewPage = "/WEB-INF/views/"+ viewPage+".jsp";	//시스템에서 접근가능한 폴더를 더해주고 
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);	//원하는 페이지를 호출에서 전달함
