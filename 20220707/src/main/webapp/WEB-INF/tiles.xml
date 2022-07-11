@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">	<!-- dtd에 의해서 사용가능 -->
+ 
+<tiles-definitions>
+  <definition name="myapp.homepage" 
+  			  template="/WEB-INF/views/layouts/layout.jsp">
+    <put-attribute name="title" value="Tiles tutorial homepage" />	<!-- 탭의 이름(맨위의 윈도우 창)	//전부 탬플릿 -->
+    <put-attribute name="header" value="/WEB-INF/views/layouts/header.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/views/layouts/footer.jsp" />
+  </definition>
+  
+  <definition name="WILDCARD:*/*" extends="myapp.homepage">
+  	<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+  </definition>
+</tiles-definitions>
